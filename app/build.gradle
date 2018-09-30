@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.renovavision.newssearch"
+        minSdkVersion rootProject.ext.minSDKVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        buildConfigField "String", "API_URL", "\"https://content.guardianapis.com/\""
+        buildConfigField "String", "API_KEY", "\"48ca150c-e1b2-497b-a70e-51dc92e9ae7e\""
+
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    //android libs
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutVersion}"
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:design:${rootProject.ext.supportLibVersion}"
+
+    // Dagger Core
+    compileOnly "com.google.dagger:dagger:${rootProject.ext.dagger2Version}"
+    kapt "com.google.dagger:dagger-compiler:${rootProject.ext.dagger2Version}"
+
+    // Dagger Android
+    implementation "com.google.dagger:dagger-android:${rootProject.ext.dagger2Version}"
+    implementation "com.google.dagger:dagger-android-support:${rootProject.ext.dagger2Version}"
+    kapt "com.google.dagger:dagger-android-processor:${rootProject.ext.dagger2Version}"
+
+    //Room
+    implementation "android.arch.persistence.room:runtime:${rootProject.ext.archLifecycleVersion}"
+    implementation "android.arch.persistence.room:rxjava2:${rootProject.ext.archLifecycleVersion}"
+    kapt "android.arch.persistence.room:compiler:${rootProject.ext.archLifecycleVersion}"
+
+    //Lifecycle
+    implementation "android.arch.lifecycle:extensions:${rootProject.ext.archLifecycleVersion}"
+    kapt "android.arch.lifecycle:compiler:${rootProject.ext.archLifecycleVersion}"
+
+    //RxJava 2 LiveData
+    implementation "android.arch.lifecycle:reactivestreams:${rootProject.ext.archLifecycleVersion}"
+
+    // Json serialization
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
+    // Networking libraries
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$oktthpVersion"
+
+    //RxJava RxAndroid
+    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJava2Version}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVersion}"
+
+    // Image loading
+    implementation "com.github.bumptech.glide:glide:${rootProject.ext.glideVersion}"
+    implementation "com.github.bumptech.glide:okhttp3-integration:${rootProject.ext.glideVersion}"
+    kapt "com.github.bumptech.glide:compiler:${rootProject.ext.glideVersion}"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:${rootProject.ext.timberVersion}"
+
+    // Date time library
+    implementation "joda-time:joda-time:${rootProject.ext.jodaVersion}"
+
+
+}

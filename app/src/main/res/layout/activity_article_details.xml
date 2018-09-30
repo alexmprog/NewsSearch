@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/title_view"
+        style="@style/BaseTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="100"
+        tools:text="Very very long tools name test test test test test test test test" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/section_view"
+        style="@style/BaseTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="10"
+        android:textColor="@color/black_overlay"
+        android:textSize="13sp"
+        tools:text="Very very long tools name test test test test test test test test" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/time_view"
+        style="@style/BaseTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="1"
+        android:textColor="@color/black_overlay"
+        android:textSize="12sp"
+        tools:text="Very very long tools name test test test test test test test test" />
+
+</LinearLayout>
